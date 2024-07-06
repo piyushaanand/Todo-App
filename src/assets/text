@@ -1,0 +1,112 @@
+// import { useEffect, useState } from 'react'
+// import { v4 as uuidv4 } from 'uuid';
+
+// // import reactLogo from './assets/react.svg'
+// // import viteLogo from '/vite.svg'
+// // import './App.css'
+// import Navbar from "./components/Navbar"
+
+// function App() {
+//   const [todo,setTodo] = useState()
+//   const [todos,setTodos] = useState([])
+//   const[showFinished,setShowFinished] = useState()
+
+
+// useEffect(()=>{
+//   let todoString = localStorage.getItem("todos")
+//   if(todoString){
+//     let todos = JSON.parse(localStorage.getItem("todos"))
+//     setTodos(todos)
+//   }
+
+// },[])
+
+//   const saveToLS = (params) => {
+//     localStorage.setItem("todos",JSON.stringify(todos))
+//   }
+  
+//   const toggleFinished = (params) => {
+    
+//   }
+  
+
+//   const handleEdit = (e, id) =>{
+//     // let id = e.target.name;
+//    let t= todos.filter(item =>
+//       item.id===id
+//     )
+//     setTodo(t[0].todo)
+//     let newTodos = todos.filter(item => {
+//       return item.id!==id
+//     });
+//     setTodos(newTodos)
+//     saveToLS()
+
+//   }
+//   const handleDelete = (e,id) => {
+//     // let index = todos.findIndex(item =>{
+//     //   return item.id === id
+//     //  })
+//      let newTodos = todos.filter(item => {
+//        return item.id!==id
+//      });
+//      setTodos(newTodos)
+//      saveToLS()
+//   }
+//   const handleAdd = () => {
+//     setTodos([...todos, {id: uuidv4(), todo, isComplted: false}])
+//     setTodo("")
+//     console.log(todo)
+//     saveToLS()
+//   }
+//   const handleChange = (e) =>{
+//        setTodo(e.target.value)
+//   }
+//   const handleCheckbox = (e) =>{
+//        let id = e.target.name;
+//        let index = todos.findIndex(item =>{
+//         return item.id === id
+//        })
+//        let newTodos = [...todos];
+//        newTodos[index].isComplted = !newTodos.isComplted
+//        setTodos(newTodos)
+//        saveToLS()
+  
+//   }
+//   return (
+//     <>
+//     <Navbar/>
+//      <div className="mx-3 md:container md:mx-auto my-5 rounded-xl p-5 bg-violet-100 min-h-[80vh] md:w-[35%] ">  
+//      <div className="addTodo my-5">
+//       <h2 className='text-lg font-bold'>Add a Todo</h2>
+//       <input onChange={handleChange} value = {todo} type="text" className='w-1/2'/>
+//       <button onClick={handleAdd} disabled={todo.length<=3} className='bg-violet-800 disabled:bg-violet-700 hover:bg-violet-950 p-2 py-1 text-sm font-bold text-white rounded-md mx-6'>Save</button>
+//      </div>
+//      <input type="checkbox" checked={showFinished} name="" id="" />Show Finished
+//       {/* <div className="bg-violet-100"> */}
+//         <h2 className='text-lg font-bold'>Your todos</h2>
+//         <div className="todos">
+//         {todos.length ===0 && <div className='m-5'>No Todos to display</div>}
+//         {todos.map(item=>{
+
+      
+//          // eslint-disable-next-line react/jsx-key
+//          return <div key = {item.id} className="todo flex w-1/2 my-3 justify-between">
+//          <div className='flex gap-5'>  <input onChange={handleCheckbox} type="checkbox" value = {item.isComplted} name = {item.id} id="" />
+//          <div className={item.isComplted?"line-through":""}>{item.todo}</div></div>
+       
+//           <div className="buttons flex h-full">
+//             <button onClick={(e)=>{handleEdit(e, item.id)}} className='bg-violet-800 hover:bg-violet-950 p-2 py-1 text-sm font-bold text-white rounded-md mx-1'>Edit</button>
+//             <button onClick={(e) =>{handleDelete(e,item.id)}} className='bg-violet-800 hover:bg-violet-950 p-2 py-1 text-sm font-bold text-white rounded-md mx-1'>Delete</button>
+//           </div>
+
+//           </div>
+//         })}
+//         </div>
+//       {/* </div> */}
+//      </div>
+//     </>
+//   )
+// }
+
+// export default App
